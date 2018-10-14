@@ -1,0 +1,57 @@
+.signin{
+    
+    margin-left: auto;
+    padding-right: 4px;
+    margin-right: 10px;
+    color:white;   
+    font-size: 20px;
+}
+.signin a{
+    color: white;
+    text-decoration: none;
+    border-bottom: solid 1px transparent;
+    transition: color .2s ease-out, border-bottom-color .2s ease-out;
+  
+
+}
+.signin a:hover{
+    color: orange;
+    border-bottom: solid 2px orange; 
+}
+
+
+
+.signout a{
+    color:rgb(238, 228, 228) !important;
+}
+
+.signout a:hover{
+    color: rgb(247, 38, 38) !important;
+    border-bottom: solid 2px rgb(247, 38, 38); 
+}
+
+nav{   
+    background-color:#2874f0;
+    height: 50px;
+   
+}
+.navbar-brand i{
+    color: yellow !important;
+}
+.navbar-brand b{
+    font-family: cursive;
+    font-weight: 300;
+}
+.navbar{
+    padding: 15px;
+}
+.search{
+    color: white !important;
+    text-align: center !important;
+    display: inline-block !important;
+}
+#search{
+    width: 600px;
+    margin-top: 13px !important;
+    margin-left: 20%;
+}

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="container text-center">
+        
+      <div class="card text-center">
+        <div class="card-header">
+          <h2>Register Now</h2>
+        </div>
+      <div class="card-body text-center">
+      <form  class="form-horizontal" (ngSubmit)="onSignup(f)" #f="ngForm">
+         
+        <div class="row form-group">
+              <label  class="col-md-2 control-label" for="name">Name</label>
+              <div class="col-md-8">
+                <input type="name" id="name" name="name" ngModel class="form-control">
+           
+              </div>
+
+          </div>
+            <div class="row form-group">
+                <label   class="col-md-2 control-label" for="email">Mail</label>
+                <div class="col-md-8">
+                <input type="email" id="email" name="email" ngModel class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+                <label  class="col-md-2 control-label" for="contact">Contact</label>
+                <div class="col-md-8">
+                <input type="contact" id="contact" name="contact" ngModel class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+                <label  class="col-md-2 control-label" for="password">Password</label>
+                <div class="col-md-8">
+                <input type="password" id="password" name="password" ngModel class="form-control">
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+        </form>
+        </div>
+      </div>
+    </div>
+</div>

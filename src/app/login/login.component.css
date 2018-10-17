@@ -1,0 +1,33 @@
+.modal-content {
+    margin-top: 10px;
+    
+    
+    
+}
+.modal-header{
+    width: 489px;
+    margin: 10px;
+}
+.errormessage {
+    color: rgb(92, 6, 6);
+}
+label{
+    color: rgb(165, 8, 8);
+}
+.my{
+    color: rgb(74, 4, 100) !important;
+}
+
+.row{
+    border: 0 !important;
+    border-radius:0 !important;
+    margin-right: 0;
+    margin-left: 0;
+    /* min-height: 100%; */
+    /* background-size: cover;    */
+    /* width: 100%; */
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    
+}
+

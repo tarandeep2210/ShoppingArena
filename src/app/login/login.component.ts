@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { DataService } from '../data.service';
@@ -27,6 +27,15 @@ export class LoginComponent implements OnInit {
     this.dataservice.checkdata.subscribe(
       (response : boolean) => this.check = response
     )
+  }
+
+  onSignup(form: NgForm) {
+    const email1 = form.value.email;
+    const password1 = form.value.password;
+    console.log(email1,password1);
+    this.authservice.signUpuser(email1,password1);
+    // this.router.navigate(['/login']);
+
   }
 
   onSignin() {

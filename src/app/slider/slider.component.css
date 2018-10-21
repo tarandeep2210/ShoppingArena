@@ -23,6 +23,27 @@ padding-top: 4%;
 float: center;
 
 }
+.container{
+	background-color: white!important;
+}
+.trend{
+	text-align: left;
+	margin-top: 5px;
+}
 
+.row{
+	width:1200px;
+	padding-left: 0px!important;
+	margin-left: 0px
+}
 
-
+.container{
+	margin-left: 50px;
+    margin-right: 0px;
+    padding-left: 0px;
+	padding-right: 0px;
+	width: 1290px;
+}
+.carousel-inner{
+	/* width: 1290px; */
+}

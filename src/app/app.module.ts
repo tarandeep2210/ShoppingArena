@@ -11,6 +11,10 @@ import { SliderComponent } from './slider/slider.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatInputModule,MatCheckboxModule,MatFormFieldModule} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
@@ -25,6 +29,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule,MatFormFieldModule,MatInputModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([

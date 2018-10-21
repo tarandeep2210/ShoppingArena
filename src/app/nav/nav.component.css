@@ -52,6 +52,13 @@ nav{
 }
 #search{
     width: 600px;
-    margin-top: 13px !important;
+    margin-top: 18px !important;
     margin-left: 20%;
 }
+
+/* .fa-search{
+    height: 25px;
+}
+.fa{
+    height: 25px;
+} */

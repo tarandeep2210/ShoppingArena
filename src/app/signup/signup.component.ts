@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-signup',
@@ -15,12 +16,12 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSignup(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
-    this.authservice.signUpuser(email,password);
-    // this.router.navigate(['/login']);
+  // onSignup(form: NgForm) {
+  //   const email = form.value.email;
+  //   const password = form.value.password;
+  //   this.authservice.signUpuser(email,password);
+  //   // this.router.navigate(['/login']);
 
-  }
+  // }
 
 }

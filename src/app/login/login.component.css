@@ -31,3 +31,13 @@ label{
     
 }
 
+.form-horizontal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #exampleCheck1{
+      text-align: left !important;
+      margin-right: 0;
+      
+  }

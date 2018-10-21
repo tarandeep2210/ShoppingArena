@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
   providedIn: 'root'
 })
 export class AuthService {
-  check:boolean;
+  signedin:boolean;
   token: string;
   checkerror: boolean;
   constructor(public router: Router, private dataservice: DataService) { }
@@ -32,8 +32,8 @@ export class AuthService {
       response => {
         console.log("Logged In");
         this.router.navigate(['/userhome']);
-        this.check = true;
-        this.dataservice.updatedata.next(this.check);
+        this.signedin = true;
+        this.dataservice.updatedata.next(this.signedin);
         firebase.auth().currentUser.getIdToken()
         .then(
           (token: string) => this.token = token

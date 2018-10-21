@@ -6,36 +6,29 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" [formGroup]="form"  (submit)="onSignin()" >
-                    <div class="row form-group">
-                        <label class="col-md-2 control-label" for="exampleInputEmail1">Email</label>
-                        
-                        <div class="col-md-8">
+                        <mat-form-field>
+                                <input matInput placeholder="Email"  type="email" formControlName="email" aria-describedby="emailHelp">
+                              </mat-form-field>
 
-                        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
-                        <small id="emailHelp" class="form-text text-muted my">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="row form-group">
-                        <label class="col-md-2 control-label" for="exampleInputPassword1">Password</label>
-                        <div class="col-md-8">
-                            <input type="password" class="form-control" formControlName="password" placeholder="Password">
-                    </div>
-                </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+                       
+                            <mat-form-field>
+                            <input  matInput type="password" formControlName="password" placeholder="Password">
+                            </mat-form-field>
+                    
+                                
                     <div class="form-group">
                         <div>
-                            <button type="submit" class="btn btn-primary">
-                                Sign In
-                            </button>
-                            <div class="text-center">
-                                    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Sign Up Now</a>
-                                </div>
+                            <div class="row">
+                            <button type="submit" class="btn btn-primary btn-rounded mb-4">
+                            Sign In
+                            </button>&nbsp;&nbsp;&nbsp;
                             <a class="btn btn-link" href="">
-                                Forgot Your Password?
-                            </a>
+                                    Forgot Your Password?
+                                </a>
+                                
+                            </div>
+                            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Sign Up Now</a>
+                            
                             <p *ngIf="check == false" class="errormessage">Sorry, wrong credentials entered. Try Again!</p>
                         </div>
                     </div>

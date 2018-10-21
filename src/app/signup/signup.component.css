@@ -2,7 +2,17 @@
     width: 600px;
     float: center;
 } */
-.card{
+/* .card{
     margin-top: 20px;
     width:100%
-}
+} */
+
+ .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 50%;
+  }
+   

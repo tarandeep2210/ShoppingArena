@@ -8,15 +8,19 @@
           <div id='search' class="input-group mb-3">
               <input  type="text" class="form-control" placeholder="Search Products & more" aria-label="Recipient's username" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search " aria-hidden="true"></i></span>
               </div>
             </div>
       </div>
-      <div class="signin " *ngIf="!signedin">
-          <a routerLink="/login"> 
+      <div class="signin " >
+          <a routerLink="/login" *ngIf="!signedin"> 
               <i class="fa fa-sign-in" aria-hidden="true"></i> &nbsp;
                   <b>Log In</b>
           </a>
+          <a routerLink="/login" *ngIf="signedin" (click)="onclick()"> 
+            <i class="fa fa-sign-in" aria-hidden="true"></i> &nbsp;
+                <b>Sign Out</b>
+        </a>
 &nbsp;&nbsp;&nbsp;
           <a routerLink="/signup"> 
             <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;

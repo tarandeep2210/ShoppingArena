@@ -13,6 +13,8 @@ import { SignupComponent } from './signup/signup.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule,MatCheckboxModule,MatFormFieldModule} from '@angular/material';
+import { Slider2Component } from './slider2/slider2.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -25,7 +27,9 @@ import {MatButtonModule, MatInputModule,MatCheckboxModule,MatFormFieldModule} fr
     SliderComponent,
     LoginComponent,
     SignupComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    Slider2Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

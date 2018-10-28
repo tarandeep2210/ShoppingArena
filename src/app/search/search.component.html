@@ -1,0 +1,359 @@
+<div class="container">
+    <div class="row" *ngFor="let product of products | async">
+      <div class="col-md-12">
+        <!-- <div class="row">
+        <span class="trend"><h4>Trending Products</h4><h6>At Great Prices</h6></span>
+        <span class="text-right"><button class="btn btn-primary text-right">View All</button></span>
+      </div> -->
+        <hr>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>    -->
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner ">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-2" >
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <a [routerLink]="['/product',product.id]"><h6> {{ product.name }}</h6></a>
+                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <!-- <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Apple iPad</h6>
+                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/headphone.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Headphone</h6>
+                    <p class="item-price"><del>$400.00</del><span>$23.99</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>		
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/macbook-air.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Macbook Air</h6>
+                    <p class="item-price"><del>$400.00</del> <span>$649.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>								
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/nikon.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Nikon DSLR</h6>
+                    <p class="item-price"><del>$400.00</del><span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div> -->
+              
+            </div>
+          </div>
+          <!-- <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Apple iPad</h6>
+                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Apple iPad</h6>
+                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/headphone.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Headphone</h6>
+                    <p class="item-price"><del>$400.00</del><span>$23.99</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>		
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/macbook-air.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Macbook Air</h6>
+                    <p class="item-price"><del>$400.00</del> <span>$649.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>								
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/nikon.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Nikon DSLR</h6>
+                    <p class="item-price"><del>$400.00</del><span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Apple iPad</h6>
+                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Apple iPad</h6>
+                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/headphone.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Headphone</h6>
+                    <p class="item-price"><del>$400.00</del><span>$23.99</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>		
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/macbook-air.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Macbook Air</h6>
+                    <p class="item-price"><del>$400.00</del> <span>$649.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>								
+              <div class="col-md-2">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/src/assets/nikon.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h6>Nikon DSLR</h6>
+                    <p class="item-price"><del>$400.00</del><span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              
+            </div>
+          </div> -->
+        </div>
+        <!-- Carousel controls -->
+        <!-- <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a> -->
+      </div>
+      </div>
+    </div>
+  </div>

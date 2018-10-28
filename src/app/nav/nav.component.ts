@@ -11,6 +11,17 @@ export class NavComponent implements OnInit {
   signedin:boolean=false;
   constructor(private dataservice: DataService) { }
 
+  listFilter:string = '';
+  // get listFilter(): string {
+  //   return this._listFilter;
+  // }
+  // set listFilter(value: string) {
+  //   this._listFilter = value;
+  //   // this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  // }
+
+
+
   ngOnInit() {
     this.dataservice.updatedata.subscribe(
       (response: boolean) => this.signedin = response
@@ -20,5 +31,11 @@ export class NavComponent implements OnInit {
   onclick() {
     this.signedin = false;
     this.dataservice.updatedata.next(this.signedin);
+  }
+
+  onSearch(){
+    console.log(this.listFilter);
+    this.dataservice.searchdata.next(this.listFilter);
+    console.log(this.dataservice.searchdata);
   }
 }

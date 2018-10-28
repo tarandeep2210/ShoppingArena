@@ -44,3 +44,8 @@ float: center;
 /* small{
     text-align: left;
 } */
+
+#myCarousel{
+	padding-left: 0px;
+    padding-right: 0px;
+}

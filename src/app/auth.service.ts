@@ -31,7 +31,7 @@ export class AuthService {
     .then(
       response => {
         console.log("Logged In");
-        this.router.navigate(['/userhome']);
+        this.router.navigate(['/home']);
         this.signedin = true;
         this.dataservice.updatedata.next(this.signedin);
         firebase.auth().currentUser.getIdToken()

@@ -9,4 +9,7 @@ export class DataService {
   constructor() { }
   updatedata = new Subject();
   checkdata = new Subject();
+  searchdata = new Subject();
+
+
 }

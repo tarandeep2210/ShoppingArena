@@ -1,4 +1,4 @@
-<div>
+<div class="sticky">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <a class="navbar-brand" routerLink="/home">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;
@@ -6,10 +6,11 @@
       </a>
       <div class="search">
           <div id='search' class="input-group mb-3">
-              <input  type="text" class="form-control" placeholder="Search Products & more" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <input [(ngModel)]='listFilter' name ="search" type="text" class="form-control" placeholder="Search Products & more">
               <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search " aria-hidden="true"></i></span>
+                <span class="input-group-text" id="basic-addon2"><a (click)="onSearch()" routerLink="/search"><i class="fa fa-search " aria-hidden="true"></i></a></span>
               </div>
+            
             </div>
       </div>
       <div class="signin " >

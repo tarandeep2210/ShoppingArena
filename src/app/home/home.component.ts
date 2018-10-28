@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '../../../node_modules/@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  products: Observable<any[]>;
 
-  constructor() { }
+  constructor(private route : ActivatedRoute) {
+
+    this.route.data.subscribe(
+      data => this.products = data['products']
+    );
+   }
 
   ngOnInit() {
+    
   }
 
 }

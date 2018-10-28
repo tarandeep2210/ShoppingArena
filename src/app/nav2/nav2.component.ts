@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductService } from '../product/product.service';
+
 
 @Component({
   selector: 'app-nav2',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Nav2Component implements OnInit {
 
-  constructor() { }
+  electronics: Observable<any[]>;
+  constructor(private service : ProductService) {
+    this.electronics = this.service.getCategoryProducts('electronics');
+
+   }
+ 
+
 
   ngOnInit() {
   }

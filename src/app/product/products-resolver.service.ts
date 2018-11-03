@@ -2,22 +2,24 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { ProductService } from '../product/product.service';
+import { Product } from './product.model';
 
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsResolverService implements Resolve<any> {
+export class ProductsResolverService implements Resolve<Product[]> {
+  // products: Product[];
 
-  products: Observable<any[]>;
+  
   constructor(private productService: ProductService,
     private router: Router) { }
 
     resolve(route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot): Observable<any> {
+      state: RouterStateSnapshot): Observable<Product[]> {
   // let id = route.params['id'];
   // let id = route.paramMap.get('id');
   // if (isNaN(+id)) {
@@ -25,9 +27,9 @@ export class ProductsResolverService implements Resolve<any> {
   //     this.router.navigate(['/products']);
   //     return Observable.of(null);
   // }
-  this.products = this.productService.getProducts();
-  console.log(this.products);
-  return this.products;
+   return this.productService.getProducts().pipe(map(products => { console.log(products); if(products) { return products; } } )  );
+    
+  
       
 }
 }

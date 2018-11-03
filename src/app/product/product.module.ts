@@ -8,17 +8,17 @@ import { ProductsResolverService } from './products-resolver.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule.forChild([
-      {
-      path: '',
-      component: ProductDetailComponent
-    },
+    CommonModule
+    // RouterModule.forChild([
+    //   {
+    //   path: '',
+    //   component: ProductDetailComponent
+    // },
 
-    ])
+    // ])
   ],
   declarations: [
-    ProductDetailComponent
+    
   ],
   providers:[
     ProductService,

@@ -10,6 +10,8 @@ export class DataService {
   updatedata = new Subject();
   checkdata = new Subject();
   searchdata = new Subject();
+  spin = new Subject();
+
 
 
 }

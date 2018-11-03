@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +10,7 @@ import { DataService } from '../data.service';
 export class NavComponent implements OnInit {
 
   signedin:boolean=false;
-  constructor(private dataservice: DataService) { }
+  constructor(private dataservice: DataService,private router:Router) { }
 
   listFilter:string = '';
   // get listFilter(): string {
@@ -36,6 +37,7 @@ export class NavComponent implements OnInit {
   onSearch(){
     console.log(this.listFilter);
     this.dataservice.searchdata.next(this.listFilter);
-    console.log(this.dataservice.searchdata);
+    this.router.navigateByUrl('/search');
+    // console.log(this.dataservice.searchdata);
   }
 }

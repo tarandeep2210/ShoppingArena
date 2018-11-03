@@ -1,0 +1,12 @@
+.container{
+    margin-top: 70px;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 1349px;
+}
+.right{
+    margin-left: auto;
+}
+.btn{
+    margin-right: 5px;
+}

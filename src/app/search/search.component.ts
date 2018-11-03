@@ -36,16 +36,6 @@ export class SearchComponent implements OnInit {
     //   data => this.products = data['products']
 
     // );
-    this.dataservice.searchdata.subscribe(
-      (data: string) => {this.searchString = data;
-      console.log(data);
-    this.products =this.service.searchProducts(this.searchString); 
-
-      }
-    );
-   
-
-
     
   //   [
   //     { "id" : 1,
@@ -63,6 +53,13 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
    
+    this.dataservice.searchdata.subscribe(
+      (data: string) => {this.searchString = data;
+      console.log(data);
+    this.products =this.service.searchProducts(this.searchString); 
+
+      }
+    );
     // this.dataservice.searchdata.subscribe( (data : string) => this.searchString = data);
     
   }

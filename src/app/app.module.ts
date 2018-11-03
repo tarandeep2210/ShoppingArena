@@ -22,6 +22,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ProductsResolverService } from './product/products-resolver.service';
 import { SearchComponent } from './search/search.component';
+import { ProductModule } from './product/product.module';
+import { ProductService } from './product/product.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CartComponent } from './cart/cart.component';
 
 
 var config = {
@@ -53,27 +57,37 @@ var config = {
     Slider2Component,
     FooterComponent,
     ProductDetailComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent,
+    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(config),AngularFirestoreModule,AngularFireStorageModule,AngularFireAuthModule,
-    MatButtonModule, MatCheckboxModule,MatFormFieldModule,MatInputModule,
+    MatButtonModule, MatCheckboxModule,MatFormFieldModule,MatInputModule,MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
+    ProductModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
+      { path: 'cart', component: CartComponent },
       { path: 'search', component: SearchComponent },
       { path: 'product/:id', component: ProductDetailComponent },
       { path: 'userhome', component: UserHomeComponent },
       { path: 'signup', component: SignupComponent },
-      { path: 'home', component: HomeComponent  },
-      { path: '', redirectTo: '/home', pathMatch: 'full' }
+      { path: 'home', component: HomeComponent, children : [ 
+        { path : '' , component : SliderComponent  }
+      ]
+       },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: '**', component: HomeComponent }
+    
 
     ])
   ],
-  providers: [ProductsResolverService],
+  providers: [ProductsResolverService,ProductService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

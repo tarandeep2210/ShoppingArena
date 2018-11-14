@@ -1,12 +1,45 @@
 
 <div class="container">
-  <div class="row">
+
+  <div class="jumbotron" *ngIf="userCart.length==0">Your Cart is Empty</div>
+  <div class="row" *ngIf="userCart.length!=0">
     <div class="col-md-8">
 <div class="card">
     <div class="card-header">My Cart</div>
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<div *ngFor="let product of userCart">
+        <div class="row">
+            <div class="col-md-2" >
+              <div class="thumb-wrapper">
+                <div class="img-box">
+                  <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
+                </div>
+                <div class="thumb-content">
+                  <!-- <a [routerLink]="['/product',product.id]"><h6> {{ product.name }}</h6></a> -->
+                 <div class="row counter">
+                  <button (click)="increment()">+</button>
+                  <input value="{{ counter }}" id="number_of_products" name="products" step="1">
+                  <button (click)="decrement()">-</button>
+                </div>
+                </div>						
+              </div>
+            </div>
+            <div class="col-md-2" >
+              {{ product.name }}<br>
+              Rs 13500<br>
+              <br>
+              <br>
+              <br>
+              <div><button class="btn btn-secondary" (click)="removeProduct(product.id)" >Remove</button></div>
+
+            </div>
+
+        </div>
+        <hr>
+
+    </div>
+
+     
       <a href="#" class="btn btn-primary">CONTINUE SHOPPING</a>      
       <a href="#" class="btn btn-primary">PLACE ORDER</a>
     </div>
@@ -19,7 +52,7 @@
         <div class="card-header">Price Details</div>
         <div class="card-body">
           <div class="row">
-            <div>Price (2 items)</div>
+            <div>Price ( {{ userCart.length }} items)</div>
             <div class="right">Rs 2100</div>
           </div>
           <div class="row">

@@ -51,9 +51,10 @@
     height: 100px!important;
 }
 #expandedImg{
-    height: 150px!important;
-    width: 100px!important;
+    height: 250px!important;
+    width: 141px!important;
     text-align: left!important;
+    margin-left: 50px;
 }
 .container-fluid{
     margin-left: 0px;
@@ -79,4 +80,8 @@
     width: 100px;
 
 
+}
+
+.name{
+    padding-left: 192px !important;
 }

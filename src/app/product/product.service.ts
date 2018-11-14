@@ -18,10 +18,18 @@ export class ProductService {
   productCol: AngularFirestoreCollection<Product>;
   products : Observable<Product[]>;
   spin : boolean=true;
+  product :Product[]=[];
+  userCart: Product[]=[];
+  // =[{
+  //   name : "HONOR 7x",
+  //   id : 1,
+  //   category:"electronics"
+  // },];
 
 
   constructor(public db: AngularFirestore,private dataservice:DataService) {
     // this.products = this.db.collection('products').valueChanges();
+
   }
 
   // addPost() {
@@ -44,13 +52,29 @@ export class ProductService {
 
         }
 
+  getCartProducts(): Product[] {
+  return this.userCart;
+  }
+
+  addToCart(id : number){
+    this.getProduct(id);
+    this.getProduct(id).subscribe( (data :Product[])=> {this.product = data
+    console.log(this.product);
+
+      this.userCart = this.userCart.concat(this.product);
+    console.log(this.userCart);
+    this.getCartProducts();
+    
+    });
+  }
+
   getCategoryProducts(category : string): Observable<any[]> {
           // return  this.db.collection('products').valueChanges();
           return this.db.collection('products', ref => ref.where("category", '==', category) ).valueChanges();
       
               }
 
-  getProduct(id : number): Observable<any[]> {
+  getProduct(id : number): Observable<Product[]> {
 
     return this.db.collection('products', ref => ref.where('id', '==', id) ).valueChanges();
     // this.productDoc= this.db.doc('products/' + '2')

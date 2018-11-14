@@ -1,51 +1,55 @@
 <!-- The grid: four columns -->
-<!-- <div class="container-fluid">
-<div class="column">
-  <div class="row">
-    <img src="/src/assets/ipad.jpg" alt="Nature" onclick="openImg(this);">
-  </div>
-  <div class="row">
-    <img src="/src/assets/poco.jpeg" alt="Snow" onclick="openImg(this);">
-  </div>
-  <div class="row">
-    <img src="/src/assets/ipad.jpg" alt="Mountains" onclick="openImg(this);">
-  </div>
-  <div class="row">
-    <img src="/src/assets/ipad.jpg" alt="Lights" onclick="openImg(this);">
-  </div>
-</div> -->
+<div class="=container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <img src="/src/assets/ipad.jpg" alt="Nature" onclick="openImg(this);">
+        </div>
+        <div class="row">
+          <img src="/src/assets/poco.jpeg" alt="Snow" onclick="openImg(this);">
+        </div>
+        <div class="row">
+          <img src="/src/assets/ipad.jpg" alt="Mountains" onclick="openImg(this);">
+        </div>
+        <div class="row">
+          <img src="/src/assets/ipad.jpg" alt="Lights" onclick="openImg(this);">
+        </div>
+      </div>
 
-<!-- The expanding image container -->
-<!-- <div class="container"> -->
-  <!-- Close the image -->
-  <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+      <!-- The expanding image container -->
+      <div class="col-md-4">
+        <!-- Close the image -->
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
 
-  <!-- Expanded image -->
-  <!-- <img id="expandedImg" > -->
+        <!-- Expanded image -->
+        <img id="expandedImg">
 
-  <!-- Image text -->
-  <!-- <div id="imgtext"></div> -->
-<!-- </div> -->
+        <!-- Image text -->
+        <div id="imgtext"></div>
+      </div>
+      <div class="col-md-2">
+      <ul class="name">
+          <li class="text" *ngFor="let product of products | async">
+            {{product.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
 
-<!-- </div> -->
+  </div>
+
+</div>
+
+
+<!-- 
 <ul>
-    <li class="text" *ngFor="let product of products | async">
-      {{product.name}}
-    </li>
-  </ul>
-
-
-  <ul>
-      <li class="text" *ngFor="let product of products | async">
-        {{product.name}}
-      </li>
-    </ul>
-    <ul>
-        <li class="text" *ngFor="let product of products | async">
-          {{product.name}}
-        </li>
-      </ul>
-
-
-
-
+  <li class="text" *ngFor="let product of products | async">
+    {{product.name}}
+  </li>
+</ul>
+<ul>
+  <li class="text" *ngFor="let product of products | async">
+    {{product.name}}
+  </li>
+</ul> -->

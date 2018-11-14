@@ -49,4 +49,11 @@ export class SliderComponent implements OnInit {
 
   }
 
+  addToCart(id : number){
+
+    // console.log(e);
+    console.log(id)
+    this.service.addToCart(id);
+  }
+
 }

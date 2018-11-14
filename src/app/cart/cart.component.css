@@ -10,3 +10,26 @@
 .btn{
     margin-right: 5px;
 }
+
+.thumb-content{
+    /* max-width: 15px; */
+    overflow: hidden;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+#number_of_products{
+    width: 15px;
+    margin-left: 6px;
+    margin-top: 0px;
+    margin-right: 6px;
+
+
+
+}
+.btn-secondary{
+    /* bottom: 0; */
+    margin-bottom: 0;
+}
+.counter{
+    margin-left: 6px;
+}

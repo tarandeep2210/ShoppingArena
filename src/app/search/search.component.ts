@@ -43,6 +43,21 @@ export class SearchComponent implements OnInit {
   //  "category" : "electronics"},
 
   //   ];
+
+  // this.dataservice.searchdata.subscribe( (data : string) => this.searchString = data);
+  this.dataservice.searchdata.subscribe(
+    (data: string) => {this.searchString = data;
+    console.log(data);
+    // this.products =
+    this.service.searchProducts(this.searchString).subscribe((data: Product[]) => this.filteredProducts=data); 
+
+    }
+  );
+}
+
+ngOnInit(){
+
+}
   }
 
   //  performFilter(filterBy: string): Product[] {
@@ -51,17 +66,9 @@ export class SearchComponent implements OnInit {
   //     product.name.toLocaleLowerCase().indexOf(filterBy) !== -1);
   // }
 
-  ngOnInit() {
+//   ngOnInit() {
    
-    this.dataservice.searchdata.subscribe(
-      (data: string) => {this.searchString = data;
-      console.log(data);
-    this.products =this.service.searchProducts(this.searchString); 
+ 
 
-      }
-    );
-    // this.dataservice.searchdata.subscribe( (data : string) => this.searchString = data);
-    
-  }
-
-}
+// }
+// }

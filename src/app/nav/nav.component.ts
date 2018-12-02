@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '../../../node_modules/@angular/router';
+import { ProductService } from '../product/product.service';
+import { Product } from '../product/product.model';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +12,10 @@ import { Router } from '../../../node_modules/@angular/router';
 export class NavComponent implements OnInit {
 
   signedin:boolean=false;
-  constructor(private dataservice: DataService,private router:Router) { }
+  userCart: Product[];
+  cartLength: number ;
+
+  constructor(private dataservice: DataService,private router:Router, private service:ProductService) { }
 
   listFilter:string = '';
   // get listFilter(): string {
@@ -27,6 +32,8 @@ export class NavComponent implements OnInit {
     this.dataservice.updatedata.subscribe(
       (response: boolean) => this.signedin = response
     );
+    // this.userCart = this.service.getCartProducts();
+    this.dataservice.cartLength.subscribe((data :number) =>  this.cartLength= data);
   }
 
   onclick() {
@@ -37,7 +44,7 @@ export class NavComponent implements OnInit {
   onSearch(){
     console.log(this.listFilter);
     this.dataservice.searchdata.next(this.listFilter);
-    this.router.navigateByUrl('/search');
+    this.service.searchProducts(this.listFilter).subscribe(() => this.router.navigateByUrl('/search'));
     // console.log(this.dataservice.searchdata);
   }
 }

@@ -11,7 +11,7 @@ import { AngularFirestoreDocument } from '../../../node_modules/@angular/fire/fi
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-
+  spin:boolean=true;    
   // product: Observable<any>;
   products: Observable<any[]>;
 
@@ -24,7 +24,14 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.service.getProducts().subscribe(() => this.spin=false);
   }
   
+  addToCart(id : number){
 
+    // console.log(e);
+    console.log(id)
+    this.service.addToCart(id);
+  }
 }

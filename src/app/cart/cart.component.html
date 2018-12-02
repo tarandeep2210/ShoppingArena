@@ -17,9 +17,9 @@
                 <div class="thumb-content">
                   <!-- <a [routerLink]="['/product',product.id]"><h6> {{ product.name }}</h6></a> -->
                  <div class="row counter">
-                  <button (click)="increment()">+</button>
-                  <input value="{{ counter }}" id="number_of_products" name="products" step="1">
-                  <button (click)="decrement()">-</button>
+                  <button (click)="increment(product.id)">+</button>
+                  <input value="{{ product.quantity }}" id="number_of_products" name="products" step="1">
+                  <button (click)="decrement(product.id)">-</button>
                 </div>
                 </div>						
               </div>
@@ -40,8 +40,8 @@
     </div>
 
      
-      <a href="#" class="btn btn-primary">CONTINUE SHOPPING</a>      
-      <a href="#" class="btn btn-primary">PLACE ORDER</a>
+      <a routerLink="/home" class="btn btn-primary">CONTINUE SHOPPING</a>      
+      <a routerLink="/thanks" class="btn btn-primary">PLACE ORDER</a>
     </div>
   </div>
 </div>

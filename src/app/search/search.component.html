@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row" *ngFor="let product of products | async">
+    <div class="row" *ngFor="let product of filteredProducts">
       <div class="col-md-12">
         <!-- <div class="row">
         <span class="trend"><h4>Trending Products</h4><h6>At Great Prices</h6></span>
@@ -23,9 +23,9 @@
                     <img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
                   </div>
                   <div class="thumb-content">
-                    <a [routerLink]="['/product',product.id]"><h6> {{ product.name }}</h6></a>
-                    <p class="item-price"><del>$400.00</del><span>$369.00</span></p>
-                    <div class="star-rating">
+                    <a [routerLink]="['/product',product.id]"><h6 style="padding-left:60px;padding-top: 5px;"> {{ product.name }}</h6></a>
+                    <p class="item-price"><del style="margin-left: 20px;">$400.00</del>&nbsp;<span>$369.00</span></p>
+                    <div class="star-rating" style="margin-left: 25px;">
                       <ul class="list-inline">
                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -34,7 +34,7 @@
                         <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                       </ul>
                     </div>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#" class="btn btn-primary" style="margin-left: 27px;">Add to Cart</a>
                   </div>						
                 </div>
               </div>

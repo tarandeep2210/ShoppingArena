@@ -2,7 +2,16 @@
 
 
           		                                                                                          
+<!-- <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}}
+    </li>
+  </ul>
 
+
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Title..">
+<textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea>
+<input type="submit" value="Add a Post" (click)="addPost()"> -->
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -165,8 +174,11 @@ h2::after {
 	color: #ffc000;
 }
 </style>
+<div class="container" *ngIf="spin">
+        <mat-spinner></mat-spinner>
 
-<div class="container">
+</div>
+<div class="container" *ngIf="!spin">
 	<div class="row">
 		<div class="col-md-12">
       <div class="row">
@@ -185,13 +197,13 @@ h2::after {
 			<div class="carousel-inner ">
 				<div class="carousel-item active">
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-md-2" *ngFor="let product of products | async">
 							<div class="thumb-wrapper">
 								<div class="img-box">
 									<img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
 								</div>
 								<div class="thumb-content">
-									<h6>Apple iPad</h6>
+									<a [routerLink]="['/product',product.id]"><h6> {{ product.name }}</h6></a>
 									<p class="item-price"><del>$400.00</del><span>$369.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
@@ -202,11 +214,11 @@ h2::after {
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" (click)="addToCart(product.id)">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
-						<div class="col-md-2">
+						<!-- <div class="col-md-2">
 							<div class="thumb-wrapper">
 								<div class="img-box">
 									<img src="/src/assets/ipad.jpg" class="img-responsive img-fluid" alt="">
@@ -289,11 +301,11 @@ h2::after {
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>						
 							</div>
-						</div>
+						</div> -->
 						
 					</div>
 				</div>
-				<div class="carousel-item">
+				<!-- <div class="carousel-item">
 					<div class="row">
 						<div class="col-md-2">
 							<div class="thumb-wrapper">
@@ -512,15 +524,15 @@ h2::after {
 						</div>
 						
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<!-- Carousel controls -->
-			<a class="carousel-control left carousel-control-prev" href="#myCarousel2" data-slide="prev">
+			<!-- <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
 				<i class="fa fa-angle-left"></i>
 			</a>
-			<a class="carousel-control right carousel-control-next" href="#myCarousel2" data-slide="next">
+			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
 				<i class="fa fa-angle-right"></i>
-			</a>
+			</a> -->
 		</div>
 		</div>
 	</div>

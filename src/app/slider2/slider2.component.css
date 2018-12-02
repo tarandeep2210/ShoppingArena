@@ -21,8 +21,8 @@ float: center;
     color:grey;
 }
 .text-right{
-    margin-left: auto;
-    margin-top: 20px;
+	margin-left: auto;
+	margin-top: 20px;
 }
 
 .row{
@@ -44,3 +44,8 @@ float: center;
 /* small{
     text-align: left;
 } */
+
+#myCarousel2{
+	padding-left: 0px;
+    padding-right: 0px;
+}

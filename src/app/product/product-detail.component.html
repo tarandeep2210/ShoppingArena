@@ -1,39 +1,55 @@
 <!-- The grid: four columns -->
-<div class="=container">
+<div class="container" *ngIf="spin">
+    <mat-spinner></mat-spinner>
+
+</div>
+<div class="container" *ngIf="!spin">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="width:250px">
       <div class="col-md-4">
         <div class="row">
-          <img src="/src/assets/ipad.jpg" alt="Nature" onclick="openImg(this);">
+            <div class="img-box">
+          <img src="/src/assets/ipad.jpg" class="img-fluid" alt="Nature" onclick="openImg(this);">
+             </div>
         </div>
         <div class="row">
-          <img src="/src/assets/poco.jpeg" alt="Snow" onclick="openImg(this);">
+            <div class="img-box">
+          <img src="/src/assets/poco.jpeg" id="poco" class="img-fluid"  alt="Nature" onclick="openImg(this);">
+             </div>
         </div>
         <div class="row">
-          <img src="/src/assets/ipad.jpg" alt="Mountains" onclick="openImg(this);">
+            <div class="img-box">
+          <img src="/src/assets/ipad.jpg" class="img-fluid"  alt="Nature" onclick="openImg(this);">
+             </div>
         </div>
         <div class="row">
-          <img src="/src/assets/ipad.jpg" alt="Lights" onclick="openImg(this);">
+            <div class="img-box">
+          <img src="/src/assets/ipad.jpg" class="img-fluid" alt="Nature" onclick="openImg(this);">
+             </div>
         </div>
       </div>
 
       <!-- The expanding image container -->
       <div class="col-md-4">
-        <!-- Close the image -->
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+       
 
         <!-- Expanded image -->
-        <img id="expandedImg">
+        <img id="expandedImg" src="/src/assets/ipad.jpg">
+        <div *ngFor="let product of products | async">
+        <button class="btn btn-primary" (click)="addToCart(product.id)">Add to Cart</button>
+      </div>
 
-        <!-- Image text -->
-        <div id="imgtext"></div>
+       
       </div>
       <div class="col-md-2">
-      <ul class="name">
-          <li class="text" *ngFor="let product of products | async">
-            {{product.name}}
-          </li>
-        </ul>
+      <!-- <ul class="name"> -->
+          
+        <div class="text name" *ngFor="let product of products | async">
+            <h2 style="width: 150px;">{{product.name}}</h2>
+            <br>
+            <div><h5 style="height: 34px;width: 140px;">Rs 4,000</h5></div>
+          </div>
+        <!-- </ul> -->
       </div>
     </div>
 

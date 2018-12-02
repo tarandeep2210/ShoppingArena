@@ -6,12 +6,16 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
 
-  constructor() { }
+  constructor() {
+
+    
+   }
   updatedata = new Subject();
   checkdata = new Subject();
   searchdata = new Subject();
   spin = new Subject();
+  cartLength = new Subject();
 
-
+  
 
 }

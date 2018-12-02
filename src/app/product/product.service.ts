@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { Observable } from 'rxjs';
 import { Product } from './product.model';
 import { DataService } from '../data.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 // interface Product{
 //   name : string;
@@ -20,6 +21,8 @@ export class ProductService {
   spin : boolean=true;
   product :Product[]=[];
   userCart: Product[]=[];
+  userCart1: Product[]=[];
+
   // =[{
   //   name : "HONOR 7x",
   //   id : 1,
@@ -27,8 +30,10 @@ export class ProductService {
   // },];
 
 
-  constructor(public db: AngularFirestore,private dataservice:DataService) {
+  constructor(public db: AngularFirestore,private dataservice:DataService ,private router :Router) {
     // this.products = this.db.collection('products').valueChanges();
+   
+
 
   }
 
@@ -37,6 +42,7 @@ export class ProductService {
   // }
 
   searchProducts(start: string): Observable<any[]> {
+    
     return  this.db.collection('products' , ref =>ref.orderBy("name").startAt(start).endAt(start + "\uf8ff")).valueChanges();
     // return this.db.collection('products', ref => ref.where("category", '==', "electronics") ).valueChanges();
 
@@ -53,6 +59,8 @@ export class ProductService {
         }
 
   getCartProducts(): Product[] {
+    this.dataservice.cartLength.next(this.userCart.length);
+    // console.log(this.userCart.length);
   return this.userCart;
   }
 
@@ -60,12 +68,30 @@ export class ProductService {
     this.getProduct(id);
     this.getProduct(id).subscribe( (data :Product[])=> {this.product = data
     console.log(this.product);
+    console.log(this.userCart.filter((product : Product) => product.id == id));
+    console.log(this.product[0]);
 
-      this.userCart = this.userCart.concat(this.product);
-    console.log(this.userCart);
+      if(this.userCart.filter((product : Product) => product.id === id).length==0)
+      {
+        this.userCart = this.userCart.concat(this.product[0]);
+        console.log(this.userCart);
+          }
+      else{
+        this.userCart1 = this.userCart.filter(product => product.id === id); 
+        this.product[0].quantity = this.userCart1[0].quantity += 1;
+        this.userCart = this.userCart.filter(product => product.id !== id); 
+        this.userCart = this.userCart.concat(this.product);
+
+              
+      }
     this.getCartProducts();
     
     });
+  }
+
+  removeProduct(id: number){
+    this.userCart = this.userCart.filter(product => product.id !== id); console.log(this.userCart)
+
   }
 
   getCategoryProducts(category : string): Observable<any[]> {

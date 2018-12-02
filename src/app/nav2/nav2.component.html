@@ -3,8 +3,8 @@
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Electronics</a>
           <div class="dropdown-menu dropdown-content">
-            <a class="dropdown-item" href="#" *ngFor="let product of electronics | async">{{ product.name }}</a>
-  
+            <a class="dropdown-item" [routerLink]="['/product',product.id]" *ngFor="let product of electronics | async">{{ product.name }}</a>
+        
           </div>
         </li>
       <li class="nav-item dropdown">

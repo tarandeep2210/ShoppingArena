@@ -26,6 +26,7 @@ import { ProductModule } from './product/product.module';
 import { ProductService } from './product/product.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CartComponent } from './cart/cart.component';
+import { ThanksComponent } from './thanks/thanks.component';
 
 
 var config = {
@@ -59,6 +60,7 @@ var config = {
     ProductDetailComponent,
     SearchComponent,
     CartComponent,
+    ThanksComponent,
     
   ],
   imports: [
@@ -71,6 +73,7 @@ var config = {
     ProductModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
+      { path: 'thanks', component: ThanksComponent },
       { path: 'cart', component: CartComponent },
       { path: 'search', component: SearchComponent },
       { path: 'product/:id', component: ProductDetailComponent },
